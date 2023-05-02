@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猜数字游戏</title>
+</head>
+
+<body>
+    <script>
+        alert('欢迎使用猜数字小游戏')
+        function A(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        var int = A(1, 10);
+        for (var i = 3; i >= 0; i--) {
+            if (i == 0) {
+                alert('机会已用完');
+                break;
+            }
+            var num = prompt('请输入一个 1-10 之间的数:       (共3次机会)还剩' + i + '次机会');
+            if (num > int && num <= 10) {
+                alert('您输入的数字大了,请重新输入');
+            } else if (num < int && num >= 1) {
+                alert('您输入的数字小了，请重新输入');
+            } else if (num == int) {
+                alert('恭喜您，猜对了!');
+                break;
+            } else {
+                alert('您输入的数超出范围,请重新输入:')
+            }
+        }
+    </script>
+</body>
+
+</html>
